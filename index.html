@@ -134,8 +134,6 @@ h1{text-wrap:balance;}
 .field input,.field textarea{width:100%;border:none;border-bottom:1px solid var(--grey-line);padding:11px 0;font-size:14.5px;font-family:var(--font);color:var(--ink);background:transparent;}
 .field textarea{resize:none;height:84px;}
 .map{position:relative;height:100%;min-height:380px;background:var(--bg-tint);overflow:hidden;border:1px solid var(--grey-line);}
-.map svg.roads{position:absolute;inset:0;width:100%;height:100%;}
-.map .pin{position:absolute;left:52%;top:46%;transform:translate(-50%,-100%);}
 .map .badge{position:absolute;left:18px;bottom:18px;background:var(--bg-elevated);padding:11px 15px;box-shadow:0 4px 14px rgba(0,0,0,0.12);font-size:12.5px;color:var(--ink);font-weight:700;}
 .tl-wrap{position:relative;display:flex;justify-content:space-between;align-items:stretch;height:130px;padding:0 4px;}
 .tl-wrap::before{content:"";position:absolute;top:64px;left:0;right:0;height:2px;background:rgba(186,12,47,0.9);}
@@ -696,14 +694,7 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
     </div>
 
     <div class="map">
-      <svg class="roads" viewBox="0 0 400 420" preserveAspectRatio="none">
-        <path d="M0 60 L400 40" stroke="var(--grey-line)" stroke-width="3"/>
-        <path d="M0 140 L400 160" stroke="var(--grey-line)" stroke-width="3"/>
-        <path d="M60 0 L40 420" stroke="var(--grey-line)" stroke-width="3"/>
-        <path d="M220 0 L260 420" stroke="var(--grey-line)" stroke-width="2"/>
-        <path d="M0 260 L400 300" stroke="var(--grey-line)" stroke-width="2"/>
-      </svg>
-      <div class="pin"><svg width="32" height="42" viewBox="0 0 24 32" fill="none"><path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 20 12 20s12-11 12-20c0-6.6-5.4-12-12-12z" fill="var(--red)"/><circle cx="12" cy="12" r="4.5" fill="var(--bg)"/></svg></div>
+      <iframe src="https://www.google.com/maps?q=Emarat+Atrium+Building,+Sheikh+Zayed+Road,+Dubai,+UAE&output=embed" style="position:absolute;inset:0;width:100%;height:100%;border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Blair Anderson Dubai office location"></iframe>
       <div class="badge">Sheikh Zayed Road, Dubai, UAE</div>
     </div>
 
