@@ -186,6 +186,9 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
   .nav-cta{padding:9px 16px;font-size:12px;}
   .logo{font-size:16px;}
 }
+@media (max-width:640px){
+  .team-grid{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))!important;gap:24px 16px!important;}
+}
 </style>
 </head>
 <body>
@@ -238,7 +241,7 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
   </div>
 </div>
 
-  <div class="wrap" style="padding:76px 0 60px;">
+  <div class="wrap" style="padding-top:76px;padding-bottom:60px;">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:38px;flex-wrap:wrap;gap:16px;">
       <div>
         <div class="label">Selected Work</div>
@@ -292,7 +295,7 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
     </div>
   </div>
 
-  <div class="wrap" style="padding:38px 0;display:flex;gap:56px;align-items:center;flex-wrap:wrap;">
+  <div class="wrap" style="padding-top:38px;padding-bottom:38px;display:flex;gap:56px;align-items:center;flex-wrap:wrap;">
     <div style="flex:1 1 380px;">
       <div class="label">Who We Are</div>
       <div class="eyebrow">Innovative.<br>Independent.<br><b>International.</b></div>
@@ -343,7 +346,7 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
     </div>
   </div>
 
-  <div class="wrap" style="padding:64px 0;text-align:center;">
+  <div class="wrap" style="padding-top:64px;padding-bottom:64px;text-align:center;">
     <div class="eyebrow" style="text-align:center;">Have a project in mind?<br><b>Let's talk.</b></div>
     <button class="btn btn-primary" onclick="showPage('contact')" style="margin-top:8px;">Contact Our Dubai Office</button>
   </div>
@@ -358,7 +361,7 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
       <source src="assets/videos/about-flyover.mp4" type="video/mp4">
     </video>
     <div style="position:absolute;inset:0;background:linear-gradient(100deg, rgba(10,22,38,0.72) 0%, rgba(10,22,38,0.46) 50%, rgba(10,22,38,0.16) 100%);"></div>
-    <div class="wrap" style="position:relative;z-index:1;padding:130px 0 110px;max-width:780px;">
+    <div class="wrap" style="position:relative;z-index:1;padding-top:130px;padding-bottom:110px;max-width:780px;">
       <div class="label" style="color:var(--slate-light);">About Us</div>
       <h1 style="font-size:34px;line-height:1.22;color:#fff;font-weight:700;margin:0 0 16px;letter-spacing:-0.4px;">Innovative. Independent. International.</h1>
       <p style="font-size:15px;line-height:1.68;color:#E6E6E4;margin:0;">
@@ -388,7 +391,7 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
     </div>
   </div>
 
-  <div class="wrap" style="padding:48px 0 16px;">
+  <div class="wrap" style="padding-top:48px;padding-bottom:16px;">
     <div>
       <div>
         <span class="chip-sector">Hospitality</span><span class="chip-sector">Retail</span><span class="chip-sector">Commercial</span>
@@ -400,10 +403,10 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
   </div>
 
 
-  <div class="wrap" style="padding:32px 0 16px;">
+  <div class="wrap" style="padding-top:32px;padding-bottom:16px;">
     <div class="label">Leadership</div>
     <div class="eyebrow" style="margin-bottom:38px;">The people behind<br><b>every project.</b></div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:44px;">
+    <div class="team-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:44px;">
       <div class="team-card"><div class="avatar" style="width:100px;height:126px;margin-bottom:14px;overflow:hidden;padding:0;"><img src="assets/images/faisal-ismail.jpg" alt="Faisal Ismail" style="width:100%;height:100%;object-fit:cover;filter:grayscale(100%);"></div>
         <h3>Faisal Ismail</h3><div class="role">Managing Director</div>
         <a class="li-link" href="https://ae.linkedin.com/in/faisal-ismail-39571922" target="_blank" rel="noopener" aria-label="Faisal Ismail on LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a></div>
@@ -419,8 +422,8 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
     </div>
   </div>
 
-  <div class="wrap" style="padding:48px 0 76px;">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:44px;margin-top:24px;">
+  <div class="wrap" style="padding-top:48px;padding-bottom:76px;">
+    <div class="team-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:44px;margin-top:24px;">
       <div class="team-card"><div class="avatar" style="width:84px;height:106px;margin-bottom:12px;overflow:hidden;padding:0;"><img src="assets/images/alan-stack.jpg" alt="Alan Stack" style="width:100%;height:100%;object-fit:cover;filter:grayscale(100%);"></div>
         <h3>Alan Stack</h3><div class="role">Managing Cost Manager</div>
         <a class="li-link" href="https://ae.linkedin.com/in/alan-stack-20a43a403" target="_blank" rel="noopener" aria-label="Alan Stack on LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a></div>
@@ -451,7 +454,7 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
       <source src="assets/videos/services-expo.mp4" type="video/mp4">
     </video>
     <div style="position:absolute;inset:0;background:linear-gradient(100deg, rgba(10,22,38,0.72) 0%, rgba(10,22,38,0.46) 50%, rgba(10,22,38,0.16) 100%);"></div>
-    <div class="wrap" style="position:relative;z-index:1;padding:96px 0;max-width:780px;">
+    <div class="wrap" style="position:relative;z-index:1;padding-top:96px;padding-bottom:96px;max-width:780px;">
       <div class="label" style="color:var(--slate-light);">What We Do</div>
       <h1 style="font-size:40px;line-height:1.2;color:#fff;font-weight:700;margin:0 0 18px;letter-spacing:-0.4px;">Complete commercial and contractual solutions for construction &amp; engineering.</h1>
       <p style="font-size:16.5px;line-height:1.72;color:#E6E6E4;margin:0;">
@@ -553,7 +556,7 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
     </div>
   </div>
 
-  <div class="wrap" style="padding:40px 0;text-align:center;">
+  <div class="wrap" style="padding-top:40px;padding-bottom:40px;text-align:center;">
     <div class="eyebrow" style="text-align:center;">Ready to discuss your project?<br><b>Speak to our team.</b></div>
     <button class="btn btn-primary" onclick="showPage('contact')" style="margin-top:8px;">Contact Us</button>
   </div>
@@ -563,7 +566,7 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
 <!-- ============ EXPERIENCE ============ -->
 <section class="page" data-page="experience">
 
-  <div class="wrap" style="padding:64px 0 28px;max-width:780px;">
+  <div class="wrap" style="padding-top:64px;padding-bottom:28px;max-width:780px;">
     <div class="label">Our Experience</div>
     <h1 style="font-size:40px;line-height:1.2;color:var(--ink);font-weight:700;margin:0 0 18px;letter-spacing:-0.4px;">A portfolio spanning every major construction sector, in 25 countries.</h1>
     <p style="font-size:16.5px;line-height:1.72;margin:0;">
@@ -659,7 +662,7 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
     </div>
   </div>
 
-  <div class="wrap" style="padding:76px 0;text-align:center;">
+  <div class="wrap" style="padding-top:76px;padding-bottom:76px;text-align:center;">
     <div class="eyebrow" style="text-align:center;">Want the full project list?<br><b>Ask our team.</b></div>
     <button class="btn btn-primary" onclick="showPage('contact')" style="margin-top:8px;">Request Our Company Profile</button>
   </div>
@@ -669,7 +672,7 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
 <!-- ============ CONTACT ============ -->
 <section class="page" data-page="contact">
 
-  <div class="wrap" style="padding:64px 0 48px;">
+  <div class="wrap" style="padding-top:64px;padding-bottom:48px;">
     <div class="label">Get In Touch</div>
     <h1 style="font-size:40px;line-height:1.2;color:var(--ink);font-weight:700;margin:0;letter-spacing:-0.4px;">We'd love to hear from you.</h1>
   </div>
