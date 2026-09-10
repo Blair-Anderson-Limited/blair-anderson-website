@@ -148,8 +148,9 @@ h1{text-wrap:balance;}
 .tl-onvideo .tl-lbl-short{color:rgba(255,255,255,0.82);}
 .tl-item.has-photo{cursor:pointer;}
 .tl-pop{position:absolute;bottom:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(6px);width:150px;background:#fff;border-radius:10px;box-shadow:0 16px 32px rgba(0,0,0,0.35);padding:6px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,transform .18s ease;z-index:20;}
-.tl-item:hover .tl-pop{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+.tl-item.has-photo:hover .tl-pop{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
 .tl-pop img{width:100%;height:100px;object-fit:cover;border-radius:6px;display:block;}
+.tl-pop-label{display:none;}
 .tl-pop::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#fff;}
 .tl-item:first-child .tl-pop{left:0;transform:translateX(0) translateY(6px);}
 .tl-item:first-child:hover .tl-pop{transform:translateX(0) translateY(0);}
@@ -188,6 +189,15 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
 }
 @media (max-width:640px){
   .team-grid{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))!important;gap:24px 16px!important;}
+}
+@media (max-width:640px){
+  .tl-item{cursor:pointer;}
+  .tl-lbl-short{display:none;}
+  .tl-pop-label{display:block;font-size:12.5px;line-height:1.55;color:var(--ink);margin-top:8px;padding:0 2px;}
+  .tl-item.tl-active::before{content:"";position:fixed;inset:0;background:rgba(10,22,38,0.55);z-index:998;}
+  .tl-pop{position:fixed!important;left:50%!important;right:auto!important;top:50%!important;bottom:auto!important;transform:translate(-50%,-50%)!important;width:min(82vw,260px)!important;max-height:76vh;overflow:auto;z-index:999;}
+  .tl-pop::after{display:none;}
+  .tl-item.tl-active .tl-pop{opacity:1;visibility:visible;pointer-events:auto;}
 }
 </style>
 </head>
@@ -374,17 +384,17 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
     <div style="position:relative;z-index:1;background:rgba(10,22,38,0.5);border-top:1px solid rgba(255,255,255,0.18);padding:4px 0 10px;">
       <div class="wrap">
         <div class="tl-wrap tl-onvideo">
-          <div class="tl-item tl-down has-photo"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">1988</div><div class="tl-lbl-short">Partnership founded in Edinburgh</div></div><div class="tl-pop"><img src="assets/images/1988.jpg" alt="1988"></div></div>
-          <div class="tl-item tl-up"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">1989</div><div class="tl-lbl-short">&ldquo;Computer User of the Year&rdquo; award</div></div></div>
-          <div class="tl-item tl-down has-photo"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">1991</div><div class="tl-lbl-short">Moved in to Loan House, Scotland</div></div><div class="tl-pop"><img src="assets/images/1991.jpg" alt="1991"></div></div>
-          <div class="tl-item tl-up has-photo"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">1995</div><div class="tl-lbl-short">Offices open in Dubai World Trade Centre &amp; Cyprus</div></div><div class="tl-pop"><img src="assets/images/1995.jpg" alt="1995"></div></div>
-          <div class="tl-item tl-down has-photo"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">2000</div><div class="tl-lbl-short">Move to Emarat Atrium</div></div><div class="tl-pop"><img src="assets/images/2000.jpg" alt="2000"></div></div>
-          <div class="tl-item tl-up"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">2006</div><div class="tl-lbl-short">Featured in Construction Manager</div></div></div>
-          <div class="tl-item tl-down"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">2007</div><div class="tl-lbl-short">BA reaches 100+ staff in the UAE construction boom</div></div></div>
-          <div class="tl-item tl-up has-photo"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">2008</div><div class="tl-lbl-short">International Achievement Award - QS Magazine</div></div><div class="tl-pop"><img src="assets/images/2008.jpg" alt="2008"></div></div>
-          <div class="tl-item tl-down"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">2012</div><div class="tl-lbl-short">BA returns to pre-crisis size and keeps growing</div></div></div>
-          <div class="tl-item tl-up has-photo"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">2023</div><div class="tl-lbl-short">35 years in business</div></div><div class="tl-pop"><img src="assets/images/2023.jpg" alt="2023"></div></div>
-          <div class="tl-item tl-down has-photo"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">Today</div><div class="tl-lbl-short">Active in 25 countries</div></div><div class="tl-pop"><img src="assets/images/today.jpg" alt="Today"></div></div>
+          <div class="tl-item tl-down has-photo" onclick="toggleTlItem(this)"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">1988</div><div class="tl-lbl-short">Partnership founded in Edinburgh</div></div><div class="tl-pop"><img src="assets/images/1988.jpg" alt="1988"><div class="tl-pop-label">Partnership founded in Edinburgh</div></div></div>
+          <div class="tl-item tl-up" onclick="toggleTlItem(this)"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">1989</div><div class="tl-lbl-short">&ldquo;Computer User of the Year&rdquo; award</div></div><div class="tl-pop"><div class="tl-pop-label">&ldquo;Computer User of the Year&rdquo; award</div></div></div>
+          <div class="tl-item tl-down has-photo" onclick="toggleTlItem(this)"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">1991</div><div class="tl-lbl-short">Moved in to Loan House, Scotland</div></div><div class="tl-pop"><img src="assets/images/1991.jpg" alt="1991"><div class="tl-pop-label">Moved in to Loan House, Scotland</div></div></div>
+          <div class="tl-item tl-up has-photo" onclick="toggleTlItem(this)"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">1995</div><div class="tl-lbl-short">Offices open in Dubai World Trade Centre &amp; Cyprus</div></div><div class="tl-pop"><img src="assets/images/1995.jpg" alt="1995"><div class="tl-pop-label">Offices open in Dubai World Trade Centre &amp; Cyprus</div></div></div>
+          <div class="tl-item tl-down has-photo" onclick="toggleTlItem(this)"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">2000</div><div class="tl-lbl-short">Move to Emarat Atrium</div></div><div class="tl-pop"><img src="assets/images/2000.jpg" alt="2000"><div class="tl-pop-label">Move to Emarat Atrium</div></div></div>
+          <div class="tl-item tl-up" onclick="toggleTlItem(this)"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">2006</div><div class="tl-lbl-short">Featured in Construction Manager</div></div><div class="tl-pop"><div class="tl-pop-label">Featured in Construction Manager</div></div></div>
+          <div class="tl-item tl-down" onclick="toggleTlItem(this)"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">2007</div><div class="tl-lbl-short">BA reaches 100+ staff in the UAE construction boom</div></div><div class="tl-pop"><div class="tl-pop-label">BA reaches 100+ staff in the UAE construction boom</div></div></div>
+          <div class="tl-item tl-up has-photo" onclick="toggleTlItem(this)"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">2008</div><div class="tl-lbl-short">International Achievement Award - QS Magazine</div></div><div class="tl-pop"><img src="assets/images/2008.jpg" alt="2008"><div class="tl-pop-label">International Achievement Award - QS Magazine</div></div></div>
+          <div class="tl-item tl-down" onclick="toggleTlItem(this)"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">2012</div><div class="tl-lbl-short">BA returns to pre-crisis size and keeps growing</div></div><div class="tl-pop"><div class="tl-pop-label">BA returns to pre-crisis size and keeps growing</div></div></div>
+          <div class="tl-item tl-up has-photo" onclick="toggleTlItem(this)"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">2023</div><div class="tl-lbl-short">35 years in business</div></div><div class="tl-pop"><img src="assets/images/2023.jpg" alt="2023"><div class="tl-pop-label">35 years in business</div></div></div>
+          <div class="tl-item tl-down has-photo" onclick="toggleTlItem(this)"><div class="tl-dot"></div><div class="tl-textblock"><div class="tl-year">Today</div><div class="tl-lbl-short">Active in 25 countries</div></div><div class="tl-pop"><img src="assets/images/today.jpg" alt="Today"><div class="tl-pop-label">Active in 25 countries</div></div></div>
         
         </div>
       </div>
@@ -697,7 +707,7 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
     </div>
 
     <div class="map">
-      <iframe src="https://www.google.com/maps?q=Emarat+Atrium+Building,+Sheikh+Zayed+Road,+Dubai,+UAE&output=embed" style="position:absolute;inset:0;width:100%;height:100%;border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Blair Anderson Dubai office location"></iframe>
+      <iframe src="https://www.google.com/maps?q=Blair+Anderson+Limited,+Emarat+Atrium+Building,+Sheikh+Zayed+Road,+Dubai,+UAE&output=embed" style="position:absolute;inset:0;width:100%;height:100%;border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Blair Anderson Dubai office location"></iframe>
       <div class="badge">Sheikh Zayed Road, Dubai, UAE</div>
     </div>
 
@@ -753,6 +763,12 @@ function showPage(name){
   });
   if (PAGE_TITLES[name]) document.title = PAGE_TITLES[name];
   window.scrollTo(0,0);
+}
+
+function toggleTlItem(el){
+  var wasActive = el.classList.contains('tl-active');
+  document.querySelectorAll('.tl-item.tl-active').forEach(function(i){ i.classList.remove('tl-active'); });
+  if (!wasActive) { el.classList.add('tl-active'); }
 }
 
 function sendContactEmail(){
