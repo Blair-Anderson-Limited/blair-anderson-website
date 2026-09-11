@@ -72,7 +72,7 @@ h1{text-wrap:balance;}
 .photo{position:relative;overflow:hidden;background:linear-gradient(135deg,#3b3b3b,#767676);}
 .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .photo .tex{position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,0.06) 0 2px,transparent 2px 22px);}
-.photo .cap{position:absolute;left:16px;bottom:14px;color:#fff;z-index:2;background:rgba(186,12,47,0.82);padding:4px 7px;display:inline-block;max-width:calc(100% - 32px);line-height:1.3;}
+.photo .cap{position:absolute;left:16px;bottom:14px;color:#fff;z-index:2;background:rgba(186,12,47,0.66);padding:4px 7px;display:inline-block;max-width:calc(100% - 32px);line-height:1.3;border-radius:6px;box-shadow:0 8px 18px rgba(0,0,0,0.32);}
 .photo .cap b{display:block;font-size:14px;font-weight:700;line-height:1.3;}
 .photo .cap span{font-size:10.5px;opacity:0.92;letter-spacing:0.5px;text-transform:uppercase;line-height:1.3;}
 
@@ -98,7 +98,8 @@ h1{text-wrap:balance;}
 .proj-card:hover .framed{transform:translateY(-8px);filter:drop-shadow(0 18px 28px rgba(0,0,0,0.22));}
 
 /* SHARED BITS */
-.stat .num{font-size:42px;font-weight:700;color:var(--red);line-height:1;font-variant-numeric:tabular-nums;}
+.stat{text-align:center;}
+.stat .num{font-size:42px;font-weight:700;color:#fff;line-height:1;font-variant-numeric:tabular-nums;background:rgba(186,12,47,0.66);display:inline-block;padding:3px 10px;border-radius:6px;box-shadow:0 8px 18px rgba(0,0,0,0.32);}
 .stat .lbl{font-size:12px;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.9px;margin-top:9px;line-height:1.5;}
 .stat-onvideo .lbl{color:rgba(255,255,255,0.88);}
 .proj-card h3{margin:9px 0 2px;font-size:15px;color:var(--ink);}
@@ -116,13 +117,15 @@ h1{text-wrap:balance;}
 .chip{display:inline-block;padding:8px 16px;border:1px solid var(--grey-line);font-size:12px;font-weight:700;color:var(--slate-dark);text-transform:uppercase;letter-spacing:0.4px;margin:0 8px 8px 0;cursor:pointer;}
 .chip.on{background:var(--red);border-color:var(--red);color:#fff;}
 .chip-sector{display:inline-block;padding:8px 16px;background:rgba(186,12,47,0.65);font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:0.4px;margin:0 8px 8px 0;}
-.avatar{border-radius:14px;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;box-shadow:0 14px 26px rgba(0,0,0,0.24),0 4px 8px rgba(0,0,0,0.14);}
+.avatar{border-radius:14px;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;box-shadow:0 14px 26px rgba(0,0,0,0.24),0 4px 8px rgba(0,0,0,0.14);margin:0 auto;}
+.team-card{text-align:center;}
 .team-card h3{margin:0 0 2px;font-size:16px;color:var(--ink);}
 .team-card .role{font-size:12px;color:var(--red-glow);font-weight:700;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:7px;}
-.li-link{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;color:#0A66C2;margin:2px 0 8px;transition:opacity .2s ease;}
+.li-link{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;color:#0A66C2;margin:2px 0 8px;transition:opacity .2s ease;}
 .li-link:hover{opacity:0.72;}
+.li-link svg{width:100%;height:100%;display:block;}
 .team-card p{font-size:13.5px;line-height:1.65;margin:0;color:var(--body);}
-.cat-title{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.1px;color:var(--ink);margin:0 0 18px;padding-bottom:9px;border-bottom:2px solid var(--red);display:inline-block;}
+.cat-title{font-size:16.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.1px;color:var(--ink);margin:0 0 18px;padding-bottom:9px;border-bottom:2px solid var(--red);display:inline-block;}
 .credential .num{font-size:32px;font-weight:700;color:var(--red);line-height:1;}
 .contact-row{display:flex;gap:16px;align-items:flex-start;margin-bottom:26px;}
 .contact-row .ic{width:38px;height:38px;border:1px solid var(--grey-line);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--red);}
@@ -188,6 +191,10 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
 }
 @media (max-width:640px){
   .team-grid{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))!important;gap:24px 16px!important;}
+}
+@media (min-width:1024px){
+  .proj-grid-home{grid-template-columns:repeat(4,1fr)!important;}
+  .team-grid{grid-template-columns:repeat(4,1fr)!important;}
 }
 @media (max-width:640px){
   .tl-item{cursor:pointer;}
@@ -258,7 +265,7 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
       </div>
       <button class="btn btn-ghost" onclick="showPage('experience')">See Full Portfolio</button>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;">
+    <div class="proj-grid-home" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;">
       <div class="proj-card"><div class="framed"><div class="photo" style="height:190px;"><img src="assets/images/coex-at-expo-2020.jpg" alt="CoEx at Expo 2020"><div class="tex"></div><div class="cap"><b>CoEx at Expo 2020</b><span>Dubai, UAE</span></div></div></div><div class="tag">Exhibition Centres</div><h3>145,000 Sqm Exhibition Venue</h3><div class="meta">Pre &amp; post-contract cost management</div></div>
       <div class="proj-card"><div class="framed"><div class="photo" style="height:190px;"><img src="assets/images/etihad-museum.jpg" alt="Etihad Museum"><div class="tex"></div><div class="cap"><b>Etihad Museum</b><span>Dubai, UAE</span></div></div></div><div class="tag">Museums</div><h3>Best New Museum, MEA 2017</h3><div class="meta">Pre-contract cost management services</div></div>
       <div class="proj-card"><div class="framed"><div class="photo" style="height:190px;"><img src="assets/images/dubai-international-airport.jpg" alt="Dubai International Airport"><div class="tex"></div><div class="cap"><b>Dubai Intl Airport</b><span>Dubai, UAE</span></div></div></div><div class="tag">Transportation</div><h3>Runways, Terminals &amp; Airside Infrastructure</h3><div class="meta">Contract, claims &amp; commercial advisory</div></div>
@@ -317,7 +324,7 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
       <button class="btn btn-primary" onclick="showPage('about')">Meet the Team</button>
     </div>
     <div style="flex:1 1 320px;border-left:1px solid var(--grey-line);padding-left:48px;">
-      <img src="assets/images/regulated-by-rics.png" alt="Regulated by RICS" style="height:54px;margin-bottom:16px;">
+      <img src="assets/images/regulated-by-rics.png" alt="Regulated by RICS" style="height:108px;margin-bottom:16px;">
       <p style="font-size:14.5px;line-height:1.62;color:var(--body);margin:0;max-width:340px;">
         Blair Anderson is a RICS registered company, upholding the highest professional and ethical
         standards in cost management and construction consultancy.
@@ -355,7 +362,7 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
     </div>
   </div>
 
-  <div class="wrap" style="padding-top:64px;padding-bottom:64px;text-align:center;">
+  <div class="wrap" style="padding-top:32px;padding-bottom:32px;text-align:center;">
     <div class="eyebrow" style="text-align:center;">Have a project in mind?<br><b>Let's talk.</b></div>
     <button class="btn btn-primary" onclick="showPage('contact')" style="margin-top:8px;">Contact Our Dubai Office</button>
   </div>
@@ -587,9 +594,9 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
 
   <div class="wrap" style="padding-bottom:36px;">
     <span class="chip on" onclick="scrollToCategory('cat-landmarks')">All Sectors</span>
-    <span class="chip" onclick="scrollToCategory('cat-hospitality')">Hospitality</span><span class="chip" onclick="scrollToCategory('cat-residential')">Residential</span><span class="chip" onclick="scrollToCategory('cat-retail')">Retail &amp; Mixed-Use</span>
-    <span class="chip" onclick="scrollToCategory('cat-landmarks')">Landmarks &amp; Civic</span><span class="chip" onclick="scrollToCategory('cat-leisure')">Leisure &amp; Entertainment</span>
-    <span class="chip" onclick="scrollToCategory('cat-transport')">Transportation &amp; Infrastructure</span><span class="chip" onclick="scrollToCategory('cat-exhibition')">Exhibition &amp; Culture</span><span class="chip" onclick="scrollToCategory('cat-industrial')">Industrial</span><span class="chip" onclick="scrollToCategory('cat-masterplanning')">Masterplanning</span><span class="chip" onclick="scrollToCategory('cat-commercial')">Commercial</span>
+    <span class="chip" onclick="scrollToCategory('cat-landmarks')">Landmarks &amp; Civic</span><span class="chip" onclick="scrollToCategory('cat-hospitality')">Hospitality</span><span class="chip" onclick="scrollToCategory('cat-leisure')">Leisure &amp; Entertainment</span>
+    <span class="chip" onclick="scrollToCategory('cat-retail')">Retail &amp; Mixed-Use</span><span class="chip" onclick="scrollToCategory('cat-transport')">Transportation &amp; Infrastructure</span>
+    <span class="chip" onclick="scrollToCategory('cat-residential')">Residential</span><span class="chip" onclick="scrollToCategory('cat-exhibition')">Exhibition &amp; Culture</span><span class="chip" onclick="scrollToCategory('cat-industrial')">Industrial</span><span class="chip" onclick="scrollToCategory('cat-masterplanning')">Masterplanning</span><span class="chip" onclick="scrollToCategory('cat-commercial')">Commercial</span>
   </div>
 
   <div class="wrap">
@@ -671,7 +678,7 @@ footer p{color:var(--footer-dim);font-size:13px;line-height:1.7;margin:0 0 5px;}
     </div>
   </div>
 
-  <div class="wrap" style="padding-top:76px;padding-bottom:76px;text-align:center;">
+  <div class="wrap" style="padding-top:38px;padding-bottom:38px;text-align:center;">
     <div class="eyebrow" style="text-align:center;">Want the full project list?<br><b>Ask our team.</b></div>
     <button class="btn btn-primary" onclick="showPage('contact')" style="margin-top:8px;">Request Our Company Profile</button>
   </div>
