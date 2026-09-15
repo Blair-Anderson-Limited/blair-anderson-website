@@ -793,8 +793,14 @@ function showPage(name){
     else { btn.removeAttribute('aria-current'); }
   });
   if (PAGE_TITLES[name]) document.title = PAGE_TITLES[name];
+  if (history.replaceState) { history.replaceState(null, '', name === 'home' ? '/' : '/#' + name); }
   window.scrollTo(0,0);
 }
+
+(function(){
+  var hash = window.location.hash.replace('#','');
+  if (PAGE_TITLES[hash] && hash !== 'home') { showPage(hash); }
+})();
 
 function scrollToCategory(id){
   var el = document.getElementById(id);

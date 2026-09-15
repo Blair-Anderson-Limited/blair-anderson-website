@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blair Anderson</title>
+<meta name="robots" content="noindex">
+<script>
+  var path = window.location.pathname.toLowerCase();
+  var target = '/';
+  if (path.indexOf('about') !== -1) {
+    target = '/#about';
+  } else if (path.indexOf('service') !== -1 || path.indexOf('what-we-do') !== -1) {
+    target = '/#services';
+  } else if (path.indexOf('exper') !== -1 || path.indexOf('project') !== -1 || path.indexOf('portfolio') !== -1) {
+    target = '/#experience';
+  } else if (path.indexOf('contact') !== -1) {
+    target = '/#contact';
+  }
+  window.location.replace(target);
+</script>
+</head>
+<body>
+<p>Redirecting to <a href="/">blair-anderson.com</a>&hellip;</p>
+</body>
+</html>
